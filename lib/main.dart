@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/route/route_result_page.dart';
 import 'package:flutter_demo/widget/counter/counter_widget_page.dart';
 import 'package:flutter_demo/widget/cupertino/cupertino_widget_page.dart';
 import 'package:flutter_demo/widget/state/get_state_page.dart';
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      routes: {
+        "tap_box_page": (context) => TapboxWidgetPage(),
+        "tips_result_page": (context) => RouteResultPage(tips: ModalRoute.of(context)!.settings.arguments.toString()),
+      },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -75,19 +80,41 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CupertinoWidgetPage()),
+                  MaterialPageRoute(
+                    builder: (context) => CupertinoWidgetPage(),
+                  ),
                 );
               },
               child: Text("CupertinoWidgetPage"),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
+                /*Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => TapboxWidgetPage()),
-                );
+                );*/
+                // 命名路由
+                Navigator.pushNamed(context, "tap_box_page");
               },
               child: Text("TapboxWidgetPage"),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                /*var result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RouteResultPage(tips: "tips"),
+                  ),
+                );*/
+                // 命名路由，携带参数
+                var result = await Navigator.pushNamed(
+                  context,
+                  "tips_result_page",
+                  arguments: "route named tips",
+                );
+                print("route back result: $result");
+              },
+              child: Text("RouteResultPage"),
             ),
           ],
         ),
