@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/route/route_result_page.dart';
+import 'package:flutter_demo/widget/button/button_widget_page.dart';
 import 'package:flutter_demo/widget/counter/counter_widget_page.dart';
 import 'package:flutter_demo/widget/cupertino/cupertino_widget_page.dart';
 import 'package:flutter_demo/widget/state/get_state_page.dart';
@@ -127,6 +128,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: Text("TextStylePage"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ButtonWidgetPage(),
+                  ),
+                );
+              },
+              child: Text("ButtonWidgetPage"),
             ),
           ],
         ),
