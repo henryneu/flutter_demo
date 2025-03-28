@@ -4,6 +4,7 @@ import 'package:flutter_demo/widget/counter/counter_widget_page.dart';
 import 'package:flutter_demo/widget/cupertino/cupertino_widget_page.dart';
 import 'package:flutter_demo/widget/state/get_state_page.dart';
 import 'package:flutter_demo/widget/tab/tapbox_widget_page.dart';
+import 'package:flutter_demo/widget/text_style/text_style_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -115,6 +116,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 print("route back result: $result");
               },
               child: Text("RouteResultPage"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TextStylePage(),
+                  ),
+                );
+              },
+              child: Text("TextStylePage"),
             ),
           ],
         ),
