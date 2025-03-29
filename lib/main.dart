@@ -3,9 +3,13 @@ import 'package:flutter_demo/route/route_result_page.dart';
 import 'package:flutter_demo/widget/button/button_widget_page.dart';
 import 'package:flutter_demo/widget/counter/counter_widget_page.dart';
 import 'package:flutter_demo/widget/cupertino/cupertino_widget_page.dart';
+import 'package:flutter_demo/widget/image/icon_widget_page.dart';
+import 'package:flutter_demo/widget/image/image_widget_page.dart';
 import 'package:flutter_demo/widget/state/get_state_page.dart';
 import 'package:flutter_demo/widget/tab/tapbox_widget_page.dart';
 import 'package:flutter_demo/widget/text_style/text_style_page.dart';
+
+import 'custom_painter_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -139,6 +143,39 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: Text("ButtonWidgetPage"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ImageWidgetPage(),
+                  ),
+                );
+              },
+              child: Text("ImageWidgetPage"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => IconWidgetPage(),
+                  ),
+                );
+              },
+              child: Text("IconWidgetPage"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CustomPainterPage(),
+                  ),
+                );
+              },
+              child: Text("CustomPainterPage"),
             ),
           ],
         ),
