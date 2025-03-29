@@ -6,8 +6,11 @@ import 'package:flutter_demo/widget/cupertino/cupertino_widget_page.dart';
 import 'package:flutter_demo/widget/image/icon_widget_page.dart';
 import 'package:flutter_demo/widget/image/image_widget_page.dart';
 import 'package:flutter_demo/widget/state/get_state_page.dart';
+import 'package:flutter_demo/widget/switch_box_page.dart';
 import 'package:flutter_demo/widget/tab/tapbox_widget_page.dart';
-import 'package:flutter_demo/widget/text_style/text_style_page.dart';
+import 'package:flutter_demo/widget/text/form_field_page.dart';
+import 'package:flutter_demo/widget/text/text_field_page.dart';
+import 'package:flutter_demo/widget/text/text_style_page.dart';
 
 import 'custom_painter_page.dart';
 
@@ -27,7 +30,10 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "tap_box_page": (context) => TapboxWidgetPage(),
-        "tips_result_page": (context) => RouteResultPage(tips: ModalRoute.of(context)!.settings.arguments.toString()),
+        "tips_result_page":
+            (context) => RouteResultPage(
+              tips: ModalRoute.of(context)!.settings.arguments.toString(),
+            ),
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -59,125 +65,152 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            const Text('Click button to jump to the corresponding page:'),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => CounterWidgetPage()),
-                );
-              },
-              child: Text("CounterWidgetPage"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => GetStatePage()),
-                );
-              },
-              child: Text("GetStatePage"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CupertinoWidgetPage(),
-                  ),
-                );
-              },
-              child: Text("CupertinoWidgetPage"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                /*Navigator.push(
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              const Text('Click button to jump to the corresponding page:'),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CounterWidgetPage(),
+                    ),
+                  );
+                },
+                child: Text("CounterWidgetPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GetStatePage()),
+                  );
+                },
+                child: Text("GetStatePage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CupertinoWidgetPage(),
+                    ),
+                  );
+                },
+                child: Text("CupertinoWidgetPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  /*Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => TapboxWidgetPage()),
                 );*/
-                // 命名路由
-                Navigator.pushNamed(context, "tap_box_page");
-              },
-              child: Text("TapboxWidgetPage"),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                /*var result = await Navigator.push(
+                  // 命名路由
+                  Navigator.pushNamed(context, "tap_box_page");
+                },
+                child: Text("TapboxWidgetPage"),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  /*var result = await Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => RouteResultPage(tips: "tips"),
                   ),
                 );*/
-                // 命名路由，携带参数
-                var result = await Navigator.pushNamed(
-                  context,
-                  "tips_result_page",
-                  arguments: "route named tips",
-                );
-                print("route back result: $result");
-              },
-              child: Text("RouteResultPage"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => TextStylePage(),
-                  ),
-                );
-              },
-              child: Text("TextStylePage"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ButtonWidgetPage(),
-                  ),
-                );
-              },
-              child: Text("ButtonWidgetPage"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ImageWidgetPage(),
-                  ),
-                );
-              },
-              child: Text("ImageWidgetPage"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => IconWidgetPage(),
-                  ),
-                );
-              },
-              child: Text("IconWidgetPage"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CustomPainterPage(),
-                  ),
-                );
-              },
-              child: Text("CustomPainterPage"),
-            ),
-          ],
+                  // 命名路由，携带参数
+                  var result = await Navigator.pushNamed(
+                    context,
+                    "tips_result_page",
+                    arguments: "route named tips",
+                  );
+                  print("route back result: $result");
+                },
+                child: Text("RouteResultPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TextStylePage()),
+                  );
+                },
+                child: Text("TextStylePage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ButtonWidgetPage()),
+                  );
+                },
+                child: Text("ButtonWidgetPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ImageWidgetPage()),
+                  );
+                },
+                child: Text("ImageWidgetPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => IconWidgetPage()),
+                  );
+                },
+                child: Text("IconWidgetPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SwitchBoxPage()),
+                  );
+                },
+                child: Text("SwitchBoxPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TextFieldPage(),
+                    ),
+                  );
+                },
+                child: Text("TextFieldPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FormFieldPage(),
+                    ),
+                  );
+                },
+                child: Text("FormFieldPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CustomPainterPage(),
+                    ),
+                  );
+                },
+                child: Text("CustomPainterPage"),
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
