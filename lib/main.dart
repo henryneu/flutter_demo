@@ -5,6 +5,7 @@ import 'package:flutter_demo/widget/counter/counter_widget_page.dart';
 import 'package:flutter_demo/widget/cupertino/cupertino_widget_page.dart';
 import 'package:flutter_demo/widget/image/icon_widget_page.dart';
 import 'package:flutter_demo/widget/image/image_widget_page.dart';
+import 'package:flutter_demo/widget/progress_widget_page.dart';
 import 'package:flutter_demo/widget/state/get_state_page.dart';
 import 'package:flutter_demo/widget/switch_box_page.dart';
 import 'package:flutter_demo/widget/tab/tapbox_widget_page.dart';
@@ -197,6 +198,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 },
                 child: Text("FormFieldPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProgressWidgetPage(),
+                    ),
+                  );
+                },
+                child: Text("ProgressWidgetPage"),
               ),
               ElevatedButton(
                 onPressed: () {
