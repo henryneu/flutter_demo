@@ -13,9 +13,13 @@ import 'package:flutter_demo/widget/tab/tapbox_widget_page.dart';
 import 'package:flutter_demo/widget/text/form_field_page.dart';
 import 'package:flutter_demo/widget/text/text_field_page.dart';
 import 'package:flutter_demo/widget/text/text_style_page.dart';
+import 'package:flutter_demo/widget/transform/transform_change_page.dart';
 
 import 'custom_painter_page.dart';
+import 'layout/align_center_page.dart';
 import 'layout/flex_layout_page.dart';
+import 'layout/layout_builder_page.dart';
+import 'layout/stack_positioned_page.dart';
 import 'layout/wrap_flow_page.dart';
 
 void main() {
@@ -245,6 +249,50 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 },
                 child: Text("WrapFlowPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => StackPositionedPage(),
+                    ),
+                  );
+                },
+                child: Text("StackPositionedPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AlignCenterPage(),
+                    ),
+                  );
+                },
+                child: Text("AlignCenterPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LayoutBuilderPage(),
+                    ),
+                  );
+                },
+                child: Text("LayoutBuilderPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TransformChangePage(),
+                    ),
+                  );
+                },
+                child: Text("TransformChangePage"),
               ),
               ElevatedButton(
                 onPressed: () {
