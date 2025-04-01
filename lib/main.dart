@@ -5,6 +5,7 @@ import 'package:flutter_demo/widget/constraints_test_page.dart';
 import 'package:flutter_demo/widget/container/container_page.dart';
 import 'package:flutter_demo/widget/counter/counter_widget_page.dart';
 import 'package:flutter_demo/widget/cupertino/cupertino_widget_page.dart';
+import 'package:flutter_demo/widget/drawer/home_drawer_page.dart';
 import 'package:flutter_demo/widget/fitted/fitted_box_page.dart';
 import 'package:flutter_demo/widget/image/clip_widget_page.dart';
 import 'package:flutter_demo/widget/image/icon_widget_page.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
               tips: ModalRoute.of(context)!.settings.arguments.toString(),
             ),
       },
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Home Page'),
     );
   }
 }
@@ -62,10 +63,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  int _selectedIndex = 0;
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+    });
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
     });
   }
 
@@ -75,6 +83,28 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        /*leading: Builder(builder: (context) {
+          return IconButton(
+            icon: Icon(Icons.menu, color: Colors.white),
+            onPressed: () {
+              // 打开抽屉菜单
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),*/
+        actions: <Widget>[
+          IconButton(onPressed: (){}, icon: Icon(Icons.shape_line))],
+      ),
+      drawer: HomeDrawerPage(),
+      bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.business), label: "Business"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Mine"),
+          ],
+        currentIndex: _selectedIndex,
+        fixedColor: Colors.blue,
+        onTap: _onItemTapped,
       ),
       body: SingleChildScrollView(
         child: Center(
