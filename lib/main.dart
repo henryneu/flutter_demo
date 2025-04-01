@@ -5,6 +5,7 @@ import 'package:flutter_demo/widget/constraints_test_page.dart';
 import 'package:flutter_demo/widget/container/container_page.dart';
 import 'package:flutter_demo/widget/counter/counter_widget_page.dart';
 import 'package:flutter_demo/widget/cupertino/cupertino_widget_page.dart';
+import 'package:flutter_demo/widget/fitted/fitted_box_page.dart';
 import 'package:flutter_demo/widget/image/clip_widget_page.dart';
 import 'package:flutter_demo/widget/image/icon_widget_page.dart';
 import 'package:flutter_demo/widget/image/image_widget_page.dart';
@@ -317,6 +318,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 },
                 child: Text("ClipWidgetPage"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FittedBoxPage(),
+                    ),
+                  );
+                },
+                child: Text("FittedBoxPage"),
               ),
               ElevatedButton(
                 onPressed: () {
