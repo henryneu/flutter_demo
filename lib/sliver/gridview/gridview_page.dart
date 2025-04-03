@@ -22,7 +22,7 @@ class _GridviewPageState extends State<GridviewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("AnimatedListPage")),
+      appBar: AppBar(title: Text("GridviewPage")),
       body: GridView.builder(
         padding: EdgeInsets.zero,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -61,7 +61,7 @@ class GridviewPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("AnimatedListPage")),
+      appBar: AppBar(title: Text("GridviewPage")),
       body: GridView(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
@@ -84,7 +84,7 @@ class GridviewPage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("AnimatedListPage")),
+      appBar: AppBar(title: Text("GridviewPage")),
       body: GridView.count(
         crossAxisCount: 3,
         childAspectRatio: 1.0,
@@ -105,7 +105,7 @@ class GridviewPage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("AnimatedListPage")),
+      appBar: AppBar(title: Text("GridviewPage")),
       body: GridView(
         padding: EdgeInsets.zero,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -129,7 +129,7 @@ class GridviewPage4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("AnimatedListPage")),
+      appBar: AppBar(title: Text("GridviewPage")),
       body: GridView.extent(
         maxCrossAxisExtent: 120.0,
         childAspectRatio: 2.0, //宽高比为2
