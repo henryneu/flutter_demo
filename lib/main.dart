@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/route/route_result_page.dart';
 import 'package:flutter_demo/sliver/customscrollview/custom_header_page.dart';
 import 'package:flutter_demo/sliver/customscrollview/custom_scrollview_page.dart';
+import 'package:flutter_demo/sliver/customscrollview/custom_scrollview_page2.dart';
 import 'package:flutter_demo/sliver/gridview/gridview_page.dart';
 import 'package:flutter_demo/sliver/listview/animated_list_page.dart';
 import 'package:flutter_demo/sliver/listview/listview_page.dart';
@@ -456,6 +457,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text("CustomHeaderPage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CustomScrollviewPage2(),
+                      ),
+                    );
+                  },
+                  child: Text("CustomScrollviewPage2"),
                 ),
                 ElevatedButton(
                   onPressed: () {
