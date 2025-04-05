@@ -7,6 +7,7 @@ import 'package:flutter_demo/sliver/gridview/gridview_page.dart';
 import 'package:flutter_demo/sliver/listview/animated_list_page.dart';
 import 'package:flutter_demo/sliver/listview/listview_page.dart';
 import 'package:flutter_demo/sliver/listview/listview_scroll_page.dart';
+import 'package:flutter_demo/sliver/nestedscrollview/nested_scrollview_page.dart';
 import 'package:flutter_demo/sliver/pageview/pageview_page.dart';
 import 'package:flutter_demo/sliver/tabview/tabview_page.dart';
 import 'package:flutter_demo/widget/button/button_widget_page.dart';
@@ -468,6 +469,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text("CustomScrollviewPage2"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NestedScrollviewPage(),
+                      ),
+                    );
+                  },
+                  child: Text("NestedScrollviewPage"),
                 ),
                 ElevatedButton(
                   onPressed: () {
