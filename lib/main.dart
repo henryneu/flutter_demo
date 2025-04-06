@@ -30,6 +30,7 @@ import 'package:flutter_demo/widget/text/text_style_page.dart';
 import 'package:flutter_demo/widget/transform/transform_change_page.dart';
 
 import 'custom_painter_page.dart';
+import 'inherited/inherited_widget_page.dart';
 import 'layout/align_center_page.dart';
 import 'layout/flex_layout_page.dart';
 import 'layout/layout_builder_page.dart';
@@ -480,6 +481,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text("NestedScrollviewPage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => InheritedWidgetPage(),
+                      ),
+                    );
+                  },
+                  child: Text("InheritedWidgetPage"),
                 ),
                 ElevatedButton(
                   onPressed: () {
