@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/provider/mall_provider_page.dart';
 import 'package:flutter_demo/route/route_result_page.dart';
 import 'package:flutter_demo/sliver/customscrollview/custom_header_page.dart';
 import 'package:flutter_demo/sliver/customscrollview/custom_scrollview_page.dart';
@@ -30,6 +31,7 @@ import 'package:flutter_demo/widget/text/text_style_page.dart';
 import 'package:flutter_demo/widget/transform/transform_change_page.dart';
 
 import 'custom_painter_page.dart';
+import 'dialog/dialog_style_page.dart';
 import 'inherited/inherited_widget_page.dart';
 import 'layout/align_center_page.dart';
 import 'layout/flex_layout_page.dart';
@@ -492,6 +494,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text("InheritedWidgetPage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DialogStylePage(),
+                      ),
+                    );
+                  },
+                  child: Text("DialogStylePage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MallProviderPage(),
+                      ),
+                    );
+                  },
+                  child: Text("MallProviderPage"),
                 ),
                 ElevatedButton(
                   onPressed: () {

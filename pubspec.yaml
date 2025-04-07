@@ -36,6 +36,12 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   flutter_lints: ^5.0.0
+  provider: ^6.1.4
+  image_picker: ^1.1.2
+  geolocator: ^13.0.4
+  camera: ^0.11.1
+  path_provider: ^2.1.5
+  video_player: ^2.9.5
 
   # 新添加的依赖
   english_words: ^4.0.0
