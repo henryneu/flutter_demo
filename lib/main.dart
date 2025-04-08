@@ -31,6 +31,8 @@ import 'package:flutter_demo/widget/text/text_field_page.dart';
 import 'package:flutter_demo/widget/text/text_style_page.dart';
 import 'package:flutter_demo/widget/transform/transform_change_page.dart';
 
+import 'async/future_builder_page.dart';
+import 'async/stream_builder_page.dart';
 import 'custom_painter_page.dart';
 import 'dialog/dialog_style_page.dart';
 import 'inherited/inherited_widget_page.dart';
@@ -108,15 +110,19 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         }),*/
         actions: <Widget>[
-          IconButton(onPressed: (){}, icon: Icon(Icons.shape_line))],
+          IconButton(onPressed: () {}, icon: Icon(Icons.shape_line)),
+        ],
       ),
       drawer: HomeDrawerPage(),
       bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.business), label: "Business"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Mine"),
-          ],
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: "Business",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Mine"),
+        ],
         currentIndex: _selectedIndex,
         fixedColor: Colors.blue,
         onTap: _onItemTapped,
@@ -201,7 +207,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ButtonWidgetPage()),
+                      MaterialPageRoute(
+                        builder: (context) => ButtonWidgetPage(),
+                      ),
                     );
                   },
                   child: Text("ButtonWidgetPage"),
@@ -210,7 +218,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ImageWidgetPage()),
+                      MaterialPageRoute(
+                        builder: (context) => ImageWidgetPage(),
+                      ),
                     );
                   },
                   child: Text("ImageWidgetPage"),
@@ -237,9 +247,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => TextFieldPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => TextFieldPage()),
                     );
                   },
                   child: Text("TextFieldPage"),
@@ -248,9 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => FormFieldPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => FormFieldPage()),
                     );
                   },
                   child: Text("FormFieldPage"),
@@ -281,9 +287,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => FlexLayoutPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => FlexLayoutPage()),
                     );
                   },
                   child: Text("FlexLayoutPage"),
@@ -292,9 +296,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => WrapFlowPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => WrapFlowPage()),
                     );
                   },
                   child: Text("WrapFlowPage"),
@@ -347,9 +349,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => ContainerPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => ContainerPage()),
                     );
                   },
                   child: Text("ContainerPage"),
@@ -358,9 +358,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => ClipWidgetPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => ClipWidgetPage()),
                     );
                   },
                   child: Text("ClipWidgetPage"),
@@ -369,9 +367,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => FittedBoxPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => FittedBoxPage()),
                     );
                   },
                   child: Text("FittedBoxPage"),
@@ -380,9 +376,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => ListviewPage2(),
-                      ),
+                      MaterialPageRoute(builder: (context) => ListviewPage2()),
                     );
                   },
                   child: Text("ListviewPage"),
@@ -413,9 +407,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => GridviewPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => GridviewPage()),
                     );
                   },
                   child: Text("GridviewPage"),
@@ -424,9 +416,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => PageViewPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => PageViewPage()),
                     );
                   },
                   child: Text("PageViewPage"),
@@ -435,9 +425,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => TabviewPage(),
-                      ),
+                      MaterialPageRoute(builder: (context) => TabviewPage()),
                     );
                   },
                   child: Text("TabviewPage"),
@@ -540,6 +528,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text("ValueListenablePage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FutureBuilderPage(),
+                      ),
+                    );
+                  },
+                  child: Text("FutureBuilderPage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StreamBuilderPage(),
+                      ),
+                    );
+                  },
+                  child: Text("StreamBuilderPage"),
                 ),
                 ElevatedButton(
                   onPressed: () {
