@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/provider/mall_provider_page.dart';
 import 'package:flutter_demo/route/route_result_page.dart';
+import 'package:flutter_demo/route/theme_changed_page.dart';
 import 'package:flutter_demo/sliver/customscrollview/custom_header_page.dart';
 import 'package:flutter_demo/sliver/customscrollview/custom_scrollview_page.dart';
 import 'package:flutter_demo/sliver/customscrollview/custom_scrollview_page2.dart';
@@ -38,6 +39,7 @@ import 'layout/flex_layout_page.dart';
 import 'layout/layout_builder_page.dart';
 import 'layout/stack_positioned_page.dart';
 import 'layout/wrap_flow_page.dart';
+import 'listenable/value_listenable_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -516,6 +518,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text("MallProviderPage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ThemeChangedPage(),
+                      ),
+                    );
+                  },
+                  child: Text("ThemeChangedPage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ValueListenablePage(),
+                      ),
+                    );
+                  },
+                  child: Text("ValueListenablePage"),
                 ),
                 ElevatedButton(
                   onPressed: () {
