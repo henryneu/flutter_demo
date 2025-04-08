@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/pointer/pointer_test_page.dart';
 import 'package:flutter_demo/provider/mall_provider_page.dart';
 import 'package:flutter_demo/route/route_result_page.dart';
 import 'package:flutter_demo/route/theme_changed_page.dart';
@@ -35,6 +36,7 @@ import 'async/future_builder_page.dart';
 import 'async/stream_builder_page.dart';
 import 'custom_painter_page.dart';
 import 'dialog/dialog_style_page.dart';
+import 'gesture/gestur_detector_page.dart';
 import 'inherited/inherited_widget_page.dart';
 import 'layout/align_center_page.dart';
 import 'layout/flex_layout_page.dart';
@@ -550,6 +552,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text("StreamBuilderPage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PointerTestPage2(),
+                      ),
+                    );
+                  },
+                  child: Text("PointerTestPage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => GestureDetectorPage4(),
+                      ),
+                    );
+                  },
+                  child: Text("GestureDetectorPage"),
                 ),
                 ElevatedButton(
                   onPressed: () {

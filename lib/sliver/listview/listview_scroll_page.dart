@@ -111,11 +111,11 @@ class _ListviewScrollState2 extends State<ListviewScrollPage2> {
               ),
               CircleAvatar(
                 radius: 36.0,
+                backgroundColor: Colors.black54,
                 child: Text(
                   _progress,
                   style: TextStyle(color: Colors.white, fontSize: 24.0),
                 ),
-                backgroundColor: Colors.black54,
               ),
             ],
           ),

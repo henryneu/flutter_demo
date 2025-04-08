@@ -169,7 +169,7 @@ class _DialogStyleState extends State<DialogStylePage> {
         return SimpleDialog(
           title: const Text('请选择语言'),
           children: <Widget>[
-            ElevatedButton(
+            SimpleDialogOption(
               onPressed: () {
                 Navigator.pop(context, 1);
               },
@@ -193,7 +193,7 @@ class _DialogStyleState extends State<DialogStylePage> {
     );
 
     if (i != null) {
-      print("选择了：${i == 1 ? "中文简体" : "美国英语"}");
+      print("选择了：${i == 1 ? "中文简体" : "英语"}");
     }
   }
 
