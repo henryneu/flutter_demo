@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/pointer/pointer_down_listener_page.dart';
 import 'package:flutter_demo/pointer/pointer_test_page.dart';
 import 'package:flutter_demo/provider/mall_provider_page.dart';
 import 'package:flutter_demo/route/route_result_page.dart';
@@ -574,6 +575,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text("GestureDetectorPage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PointerDownListenerPage(),
+                      ),
+                    );
+                  },
+                  child: Text("PointerDownListenerPage"),
                 ),
                 ElevatedButton(
                   onPressed: () {
