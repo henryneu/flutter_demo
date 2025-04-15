@@ -20,6 +20,7 @@ import 'package:flutter_demo/widget/container/container_page.dart';
 import 'package:flutter_demo/widget/counter/counter_widget_page.dart';
 import 'package:flutter_demo/widget/cupertino/cupertino_widget_page.dart';
 import 'package:flutter_demo/widget/drawer/home_drawer_page.dart';
+import 'package:flutter_demo/widget/drawer/linkage_drawer_widget.dart';
 import 'package:flutter_demo/widget/fitted/fitted_box_page.dart';
 import 'package:flutter_demo/widget/image/clip_widget_page.dart';
 import 'package:flutter_demo/widget/image/icon_widget_page.dart';
@@ -586,6 +587,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: Text("PointerDownListenerPage"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (context) => LinkageDrawerWidget(
+                              size: MediaQuery.of(context).size,
+                            ),
+                      ),
+                    );
+                  },
+                  child: Text("LinkageDrawerPage"),
                 ),
                 ElevatedButton(
                   onPressed: () {
